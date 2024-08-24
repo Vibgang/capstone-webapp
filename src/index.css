@@ -1,0 +1,343 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url('/src/assets/logo.jpg');
+  background-size: 900px; /* Keeps the image size consistent */
+  background-position: left top; /* Moves the image to the top-left corner */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 28rem;
+  margin-top: 40px;
+  margin-left: 750px;
+  padding: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.85); /* Slight transparency for better readability */
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.125rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.375rem rgba(0, 0, 0, 0.1);
+}
+
+/* General Page Styling */
+.home-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Header and Navbar Styling */
+header {
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px; /* Adjust as needed */
+}
+
+.button {
+  background-color: #c9d3de;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  color: #2d3748;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background-color: #b5bfca;
+}
+
+/* Navigation Items Styling */
+.nav-items {
+  display: flex;
+  gap: 15px; /* Adjust as needed */
+}
+
+.nav-item {
+  text-decoration: none;
+  background-color: #c9d3de;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  color: #000000;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #b5bfca;
+}
+
+/* Main Content Styling */
+.main-content {
+  padding: 20px;
+}
+
+.content-box {
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 1rem;
+  color: #666;
+}
+
+
+/* Login and Register Pages */
+
+/* .container {
+  max-width: 28rem;
+  margin-top: 40px;
+  margin-left: 650px;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.125rem rgba(0, 0, 0, 0.1), 0 0.125rem 0.375rem rgba(0, 0, 0, 0.1);
+} */
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #2d3748;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2d4268;
+  margin-bottom: 0.3rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 0.1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.25rem;
+  color: #4a5568;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+  border-color: #cbd5e0;
+  box-shadow: 0 0 0 2px rgba(77, 111, 143, 0.436)
+}
+
+.captcha-container {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #edf2f7;
+  text-align: center;
+  color: #2d3748;
+  border-radius: 0.25rem;
+}
+
+.submit-button {
+  background-color: #808794;
+  color: #ffffff;
+  margin-top: 9px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #606c70;
+}
+
+
+/* Buttons and Links */
+
+button {
+  background-color: #c9d3de;
+  border: none;
+  margin-right: 4px;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #b5bfca;
+}
+
+a {
+  color: #367ec1;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #306baaec;
+}
+
+
+/* Home Page */
+/* Container for the main content */
+.main-content {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+/* Styling for each content box */
+.content-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Title styling */
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Description text styling */
+.text {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+/*home icon*/
+.home-icon {
+  cursor: pointer;
+  color: #2d3748;
+  margin-left: 10px;
+  font-size: 1.25rem;
+}
+
+.home-icon:hover {
+  color: #4a5568;
+}
+
+/* legal summarization page styling */
+/* General page styling */
+.page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.content-container {
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.instructions {
+  margin-bottom: 20px;
+}
+
+.instructions p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.file-input {
+  display: block;
+  margin: 0 auto 20px auto;
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.process-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #7d8894;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.process-button:hover {
+  background-color: #637180;
+}
+
+.output-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.output-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.output-text {
+  font-size: 1rem;
+  color: #666;
+}
