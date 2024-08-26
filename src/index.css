@@ -1,0 +1,244 @@
+
+.hero-section {
+  height: calc(100vh - 80px); /* Adjust based on your header height */
+  background-image: url('../src/assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-button {
+  background-color: rgb(214, 211, 211);
+  color: #2b2a2a;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Adjustments to existing styles */
+header {
+  background-color: #e3dede;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Updated nav items styling */
+.nav-item {
+  font-family: 'Arial', sans-serif; /* Choose a clean, professional font */
+  font-size: 1rem;
+  color: #333333; /* Set to black */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent; /* Add border for hover effect */
+}
+
+.nav-item:hover {
+  color: #000000; /* Darken text on hover */
+  border-bottom: 2px solid #000000; /* Underline effect on hover */
+}
+
+/* Keep the existing nav-buttons styling */
+.nav-buttons .button {
+  font-family: 'Arial', sans-serif;
+  color: #333333;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons .button:hover {
+  background-color: #d9d9d9;
+}
+
+/*gavel as cursor*/
+.nav-item,
+.hero-button,
+.button {
+  cursor: url('../src/assets/gavel_up.png') 16 20, auto;
+}
+
+
+.hero-button:active,
+.nav-item:active {
+  cursor: url('../src/assets/gavel_down.png') 16 20, auto;
+}
+
+/* Login and Register Pages */
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #2d3748;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2d4268;
+  margin-bottom: 0.3rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.5rem 0.1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.25rem;
+  color: #4a5568;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+  border-color: #cbd5e0;
+  box-shadow: 0 0 0 2px rgba(77, 111, 143, 0.436)
+}
+
+
+.submit-button {
+  background-color: #808794;
+  color: #ffffff;
+  margin-top: 9px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #606c70;
+}
+
+
+/* Buttons and Links */
+
+button {
+  background-color: #c9d3de;
+  border: none;
+  margin-right: 4px;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #b5bfca;
+}
+
+a {
+  color: #367ec1;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #306baaec;
+}
+
+/* Styling for each content box */
+.content-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Title styling */
+.title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Description text styling */
+.text {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+/*home icon*/
+.home-icon {
+  cursor: pointer;
+  color: #2d3748;
+  margin-left: 10px;
+  font-size: 1.25rem;
+}
+
+.home-icon:hover {
+  color: #4a5568;
+}
+
