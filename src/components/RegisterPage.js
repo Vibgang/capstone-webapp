@@ -10,7 +10,7 @@ const RegisterPage = () => {
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log('Registration submitted:', { firstName, lastName, email, password, captcha });
+      console.log('Registration submitted:', { firstName, lastName, email, password });
       // Here you would typically handle the registration logic
     };
   

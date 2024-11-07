@@ -3,18 +3,36 @@ import '../index.css';
 import '../modules.css';
 
 const LegalSummarizationPage = () => {
-  const [file, setFile] = useState(null);
+  const [textInput, setTextInput] = useState('');
   const [output, setOutput] = useState('');
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+  const handleTextChange = (e) => {
+    setTextInput(e.target.value);
   };
 
   const handleProcess = () => {
-    // Simulate processing the file
-    setTimeout(() => {
-      setOutput('This is a summary of the legal document.');
-    }, 2000);
+    fetch('/summary', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ inputData: textInput }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      const formattedOutput = data.summary
+        ? data.summary
+            .replace(/\*(.*?)\*/g, '<strong>$1</strong>') // Bold text
+            .replace(/\*/g, '') // Remove any remaining stars
+            .replace(/\n/g, '<br/>') // Preserve line breaks
+        : 'Failed to process document';
+      setOutput(formattedOutput);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      setOutput('Failed to process document');
+    });
   };
 
   return (
@@ -22,12 +40,14 @@ const LegalSummarizationPage = () => {
       <div className="content-container">
         <h1 className="title">Legal Text Summarization</h1>
         <div className="instructions">
-          <p>Please upload your legal document to get a summarized output.</p>
+          <p>Please enter or paste your legal document text to get a summarized output.</p>
         </div>
-        <input
-          type="file"
-          onChange={handleFileChange}
-          className="file-input"
+        <textarea
+          value={textInput}
+          onChange={handleTextChange}
+          placeholder="Enter legal document text here..."
+          id="inputData"
+          className="text-input"
         />
         <button
           onClick={handleProcess}
@@ -38,7 +58,7 @@ const LegalSummarizationPage = () => {
         {output && (
           <div className="output-container">
             <h2 className="output-title">Output:</h2>
-            <p className="output-text">{output}</p>
+            <p className="output-text" dangerouslySetInnerHTML={{ __html: output }}></p>
           </div>
         )}
       </div>

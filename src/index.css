@@ -1,7 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, header {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  background-image: url('../src/assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
 .hero-section {
-  height: calc(100vh - 80px); /* Adjust based on your header height */
-  background-image: url('../src/assets/background.jpg');
+  height: calc(100vh - 80px); /* Adjust height based on your header height */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -11,6 +26,7 @@
   text-align: center;
   color: rgb(255, 255, 255);
   position: relative;
+  z-index: 0; /* Ensures the image appears below the navbar */
 }
 
 .hero-section::before {
@@ -20,7 +36,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Darken the background image */
+  z-index: 1; /* This ensures the overlay stays on top of the background */
 }
 
 .hero-title {
@@ -28,7 +45,7 @@
   font-weight: bold;
   margin-bottom: 1rem;
   position: relative;
-  z-index: 1;
+  z-index: 2; /* Ensure the title is above the background and overlay */
 }
 
 .hero-button {
@@ -41,21 +58,46 @@
   cursor: pointer;
   transition: background-color 0.2s;
   position: relative;
-  z-index: 1;
+  z-index: 2; /* Ensure the button is above the background and overlay */
 }
 
 .hero-button:hover {
   background-color: #f0f0f0;
 }
 
-/* Adjustments to existing styles */
 header {
-  background-color: #e3dede;
+  background-color: transparent; /* Make navbar background transparent */
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
+
+.nav-items {
+  display: flex;
+  justify-content: center; /* Center the nav items horizontally */
+  align-items: center;     /* Center the nav items vertically */
+  width: 100%;
+}
+
+.nav-item {
+  font-family: 'Roboto', sans-serif; /* Use a more stylish font */
+  font-size: 1.1rem;
+  font-weight: 500; /* Make the text a bit bolder */
+  color: #ffffff; /* Set text color to white for better contrast on transparent background */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+/* Hover effect */
+.nav-item:hover {
+  color: #ffd700; /* Change color to gold on hover for a stylish effect */
+  border-bottom: 2px solid #ffd700; /* Underline effect on hover */
+}
+
+/* Optional: Style for the navbar container */
 nav {
   display: flex;
   justify-content: space-between;
@@ -76,22 +118,6 @@ nav {
   padding: 1rem;
   position: relative;
   z-index: 10;
-}
-
-/* Updated nav items styling */
-.nav-item {
-  font-family: 'Arial', sans-serif; /* Choose a clean, professional font */
-  font-size: 1rem;
-  color: #333333; /* Set to black */
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  border-bottom: 2px solid transparent; /* Add border for hover effect */
-}
-
-.nav-item:hover {
-  color: #000000; /* Darken text on hover */
-  border-bottom: 2px solid #000000; /* Underline effect on hover */
 }
 
 /* Keep the existing nav-buttons styling */
@@ -116,7 +142,6 @@ nav {
 .button {
   cursor: url('../src/assets/gavel_up.png') 16 20, auto;
 }
-
 
 .hero-button:active,
 .nav-item:active {
@@ -242,3 +267,34 @@ a:hover {
   color: #4a5568;
 }
 
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%; /* Ensures responsive width */
+  text-align: center;
+}
+
+.text-input {
+  width: 100%; /* Match the width of content container */
+  height: 150px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  resize: vertical;
+  box-sizing: border-box;
+}

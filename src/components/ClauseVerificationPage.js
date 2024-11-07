@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 import '../index.css';
 
 const ClauseVerificationPage = () => {
-  const [file, setFile] = useState(null);
+  const [textInput, setTextInput] = useState('');
   const [output, setOutput] = useState('');
 
-  const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+  const handleTextChange = (e) => {
+    setTextInput(e.target.value);
   };
 
   const handleProcess = () => {
-    // Simulate processing the file
+    // Simulate processing the input text
     setTimeout(() => {
       setOutput('Contract clauses have been analyzed for potential issues');
     }, 2000);
@@ -22,12 +22,13 @@ const ClauseVerificationPage = () => {
       <div className="content-container">
         <h1 className="title">Clause Verification</h1>
         <div className="instructions">
-          <p>Upload your document to verify contract clauses.</p>
+          <p>Enter the contract text to verify clauses.</p>
         </div>
-        <input
-          type="file"
-          onChange={handleFileChange}
-          className="file-input"
+        <textarea
+          value={textInput}
+          onChange={handleTextChange}
+          placeholder="Paste your contract text here"
+          className="text-input"
         />
         <button
           onClick={handleProcess}
